@@ -9,7 +9,7 @@
 
 html, body {
     height: 100vh;
-    width: 100vh;
+    width: 99.2vw;
     background-color: black;
 }
 
@@ -35,7 +35,7 @@ main {
     width: 311px;
 }
 
-#iphone > iframe {
+#iphone iframe {
     position: relative;
     top: 80px;
     left: 22px;
@@ -43,5 +43,24 @@ main {
 
     height: 471px;
     width: 268px;
+}
+
+#menu {
+    text-align: right;
+    margin: 20px;
+}
+
+#menu img{
+    height: 50px;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+#menu img:hover {
+    box-sizing: border-box;
+    border: 2px solid rgba(128, 0, 128, 0.596);
+    border-radius: 50%;
+    transition: 0.3s;
+    transform: translate(-10px);
 }
 
