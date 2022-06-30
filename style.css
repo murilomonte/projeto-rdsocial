@@ -51,9 +51,10 @@ a {
 }
 
 #menu {
+    /* queria fazer uma dock estilo mac :(
     position: relative;
     top: 87%;
-    right: 28%;
+    right: 50%; */
 
     text-align: right;
     margin: 20px;
@@ -69,6 +70,6 @@ a {
 #menu img:hover {
     box-sizing: border-box;
     transition: 0.3s;
-    transform: translate(0px, -10px);
+    transform: translate(-10px);
 }
 
