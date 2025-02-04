@@ -1,0 +1,41 @@
+.post {
+  background-color: var(--card);
+  padding: 25px 25px 15px 25px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  max-width: 900px;
+}
+
+.post-header > .data {
+  color: var(--date);
+}
+
+.post-header > .author {
+  color: var(--text);
+}
+
+.post-footer {
+  padding-top: 5px;
+  border-top: 1px solid var(--separator);
+}
+
+.post-footer > .show-comments-modal {
+  display: flex;
+  align-items: center;
+  max-width: max-content;
+  gap: 10px;
+  padding: 5px 10px;
+  transition: 0.2s;
+  cursor: pointer;
+
+}
+
+.post-footer > .show-comments-modal:hover {
+  background-color: var(--hover);
+  transition: 0.2s;
+  border-radius: 5px;
+}
+
+.post-footer > .show-comments-modal > svg {
+  width: 24px;
+}

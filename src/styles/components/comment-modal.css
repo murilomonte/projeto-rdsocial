@@ -1,0 +1,48 @@
+.comment-modal {
+  background-color: var(--card);
+  padding: 25px 25px 15px 25px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin: auto;
+  border: none;
+  outline: none;
+  max-width: 900px;
+}
+
+.comment-modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.706);
+}
+
+.post-comment-item {
+  margin-bottom: 20px;
+}
+
+.comment-author {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.comment-body {
+  margin-top: 0px;
+}
+
+.post-header > .exit-comments-modal {
+  display: flex;
+  max-width: max-content;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  transition: 0.2s;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.post-header > .exit-comments-modal:hover {
+  background-color: var(--hover);
+  transition: 0.2s;
+  border-radius: 5px;
+}
+
+.post-header > .exit-comments-modal > svg {
+  width: 24px;
+}

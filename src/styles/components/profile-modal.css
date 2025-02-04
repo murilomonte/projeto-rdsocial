@@ -1,0 +1,63 @@
+.profile-modal {
+    background-color: var(--card);
+    padding: 25px 25px 15px 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin: auto;
+    border: none;
+    outline: none;
+}
+
+.profile-modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.706);
+}
+
+.profile-email {
+    margin: 0px 0px 20px 0px;
+}
+
+.profile-info-title {
+    color: var(--text);
+    margin-bottom: 5px;
+}
+
+.profile-info-website {
+    outline: none;
+    border: none;
+}
+
+.profile-info-website:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.profile-info-list {
+    color: var(--text);
+
+}
+
+.show-profile-modal:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.profile-header > .exit-profile-modal {
+  display: flex;
+  max-width: max-content;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  transition: 0.2s;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.profile-header > .exit-profile-modal:hover {
+  background-color: var(--hover);
+  transition: 0.2s;
+  border-radius: 5px;
+}
+
+.profile-header > .exit-profile-modal > svg {
+  width: 24px;
+}
