@@ -71,16 +71,18 @@ class Post {
   async searchUser(email) {
     let url = `https://jsonplaceholder.typicode.com/users/`;
     let response = await this.fetchAPI(url);
+    console.log(response)
 
     for (let user of response) {
       if (user.email == email) {
-        return user.id
+        return user.id;
       }
     }
   }
 
   async getUser(output, email) {
     let userId = await this.searchUser(email);
+    console.log(userId)
     let user = await this.fetchUser(userId);
     output.innerHTML = `
     <header class="profile-header">
@@ -183,14 +185,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   await post.getPost(output);
 
   let showCommentsModal = document.querySelectorAll(".show-comments-modal");
-  let exitCommentsModal = document.querySelectorAll(".exit-comments-modal");
   let commentModal = document.querySelector(".comment-modal");
 
   let showProfileModal = document.querySelectorAll(".show-profile-modal");
-  let exitProfileModal = document.querySelectorAll(".exit-profile-modal");
   let profileModal = document.querySelector(".profile-modal");
 
-  let mainPostContainer = document.querySelector(".main");
 
   showCommentsModal.forEach((element) => {
     element.addEventListener("click", (event) => {
@@ -201,12 +200,17 @@ document.addEventListener("DOMContentLoaded", async () => {
         post.getComments(commentModal, postId);
       }
       commentModal.showModal();
-    });
-  });
+      setTimeout(() => {
+        let exitCommentsModal = document.querySelectorAll(
+          ".exit-comments-modal"
+        );
 
-  exitCommentsModal.forEach((element) => {
-    element.addEventListener("click", () => {
-      commentModal.close();
+        exitCommentsModal.forEach((element) => {
+          element.addEventListener("click", () => {
+            commentModal.close();
+          });
+        });
+      }, 100);
     });
   });
 
@@ -215,16 +219,19 @@ document.addEventListener("DOMContentLoaded", async () => {
       profileModal.innerHTML = "<p>Carregando...</p>";
       let tag = event.target.closest(".author");
       if (tag) {
-        let userEmail = tag.innerHTML.trim()
-        post.getUser(profileModal, userEmail)
+        let userEmail = tag.innerHTML.trim();
+        post.getUser(profileModal, userEmail);
       }
       profileModal.showModal();
-    });
-  });
 
-  exitProfileModal.forEach((element) => {
-    element.addEventListener("click", () => {
-      profileModal.close();
+      setTimeout(() => {
+        let exitProfileModal = document.querySelectorAll(".exit-profile-modal");
+        exitProfileModal.forEach((element) => {
+          element.addEventListener("click", () => {
+            profileModal.close();
+          });
+        });
+      }, 100);
     });
   });
 });
